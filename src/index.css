@@ -1,0 +1,38 @@
+:root {
+  /** FONTS */
+  /* --main-font: "Raleway", sans-serif;
+  --headings-font: "Staatliches", sans-serif; */
+
+  /** COLORS **/
+  --primary: #1a4a60cc;
+  /* --dark-grey: #2f2e2e;
+  --light-grey: #ebebeb;
+  --white: #fff;
+  --black: #000; */
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; /** 10px = 1rem */
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  /* font-family: var(--main-font); */
+  font-size: 1.8rem; /** 18px */
+  line-height: 2;
+  margin: 0;
+}
+
+.authlayout {
+  background-color: var(--primary);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
