@@ -8,6 +8,7 @@ export {
   signInWithPopup,
   signOut,
   updateProfile,
+  onAuthStateChanged,
 } from "firebase/auth";
 
 const firebaseConfig = {

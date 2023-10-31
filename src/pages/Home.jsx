@@ -1,4 +1,5 @@
 import useAuth from "../hooks/useAuth";
+import Button from "../components/Button";
 
 const Home = () => {
   const { logOut, auth } = useAuth();
@@ -7,7 +8,7 @@ const Home = () => {
   return (
     <>
       <h1>Hi, {username}</h1>
-      <button onClick={logOut}>Log out</button>
+      <Button handleClick={logOut} children={"Log out"} />
     </>
   );
 };

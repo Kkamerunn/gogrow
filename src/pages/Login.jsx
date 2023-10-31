@@ -1,32 +1,25 @@
 import Form from "../components/Form";
+import FormHeader from "../components/FormHeader";
+import BlueBox from "../components/BlueBox";
+import Abstraction from "../assets/Abstraction.png";
 import useAuth from "../hooks/useAuth";
-import Button from "../components/Button";
-import GoogleIcon from "../assets/google_icon.png";
-import FacebookIcon from "../assets/facebook_icon.png";
 
 const Login = () => {
-  const { login, loginWithGoogle, loginWithFacebook } = useAuth();
+  const { login } = useAuth();
 
   return (
-    <>
+    <div className="container">
+      <BlueBox />
       <div className="form-container">
-        <h1>Log in</h1>
-        <div className="buttons-container">
-          <Button
-            handleClick={loginWithGoogle}
-            children={"Signup with Google"}
-            icon={GoogleIcon}
-          />
-          <Button
-            handleClick={loginWithFacebook}
-            children={"Signup with Facebook"}
-            icon={FacebookIcon}
-          />
-        </div>
-        <h2>- or -</h2>
+        <FormHeader heading={"Log in"} />
         <Form actionSubmit={login} />
+        <img
+          src={Abstraction}
+          alt="abstraction"
+          className="abstraction img-login"
+        />
       </div>
-    </>
+    </div>
   );
 };
 

@@ -56,7 +56,13 @@ p {
   color: var(--grey);
 }
 
-.authlayout {
+button,
+input[type="submit"] {
+  cursor: pointer;
+}
+
+.authlayout,
+.protectedRouteLayout {
   background-color: var(--primary);
   min-height: 100vh;
   display: flex;
@@ -64,11 +70,43 @@ p {
   align-items: center;
 }
 
+.protectedRouteLayout {
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.protectedRouteLayout h1 {
+  font-size: 2rem;
+  color: var(--grey);
+}
+
+.container {
+  display: flex;
+}
+
 .form-container {
   background-color: var(--white);
   border-radius: 3.1rem;
   width: 70rem;
   padding: 12rem;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0.7rem 0.7rem 1rem 0.4rem rgba(75, 100, 119, 0.69);
+}
+
+.abstraction {
+  display: block;
+  width: 58rem;
+  height: 58rem;
+  position: absolute;
+  right: 85%;
+  bottom: 0;
+}
+
+.abstraction.img-login {
+  width: 52rem;
+  height: 52rem;
+  right: 87%;
 }
 
 .buttons-container {
@@ -133,4 +171,28 @@ p {
 .link {
   text-decoration: none;
   color: var(--dark-blue);
+}
+
+.blue-box {
+  background-color: var(--dark-blue);
+  border-radius: 3.1rem;
+  padding: 2rem 0 0 2rem;
+  width: 60rem;
+  position: relative;
+  left: 10rem;
+  z-index: 0;
+  box-shadow: 0.4rem 0.4rem 2.6rem 0.4rem rgba(75, 100, 119, 0.69);
+}
+
+.blue-box p {
+  color: var(--white);
+  line-height: 1;
+  font-size: 3.6rem;
+  font-weight: 400;
+  margin: 3rem 0 0 3rem;
+}
+
+.blue-box img {
+  width: 13.5rem;
+  height: 11.7rem;
 }

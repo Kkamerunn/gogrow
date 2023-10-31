@@ -4,9 +4,7 @@ const AuthLayout = () => {
   return (
     <>
       <main className="authlayout">
-        <div className="container">
-          <Outlet />
-        </div>
+        <Outlet />
       </main>
     </>
   );
