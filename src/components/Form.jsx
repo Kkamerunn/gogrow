@@ -24,36 +24,30 @@ const Form = ({ signUpForm, actionSubmit }) => {
     <>
       <form className="form-auth" onSubmit={handleSubmit}>
         {signUpForm ? (
-          <div className="field-group">
-            <input
-              type="text"
-              id="fullname"
-              placeholder="Full Name"
-              value={fullname}
-              onChange={(e) => setFullname(e.target.value)}
-            />
-          </div>
+          <input
+            type="text"
+            id="fullname"
+            placeholder="Full Name"
+            value={fullname}
+            onChange={(e) => setFullname(e.target.value)}
+          />
         ) : (
           ""
         )}
-        <div className="field-group">
-          <input
-            type="email"
-            id="email"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </div>
-        <div className="field-group">
-          <input
-            type="password"
-            id="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
+        <input
+          type="email"
+          id="email"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <input
+          type="password"
+          id="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
         <input
           type="submit"
           value={`${signUpForm ? "create account" : "log in"}`}

@@ -1,14 +1,18 @@
+/** FONT FAMILY **/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;800&display=swap");
+
 :root {
   /** FONTS */
-  /* --main-font: "Raleway", sans-serif;
-  --headings-font: "Staatliches", sans-serif; */
+  --main-font: "Poppins", sans-serif;
 
   /** COLORS **/
   --primary: #1a4a60cc;
-  /* --dark-grey: #2f2e2e;
-  --light-grey: #ebebeb;
   --white: #fff;
-  --black: #000; */
+  --black: #000;
+  --light-grey: #cdcaca;
+  --grey: #bebcbc;
+  --soft-grey: #f3f3f3;
+  --dark-blue: #1f485b;
 }
 
 html {
@@ -20,13 +24,36 @@ html {
 *:before,
 *:after {
   box-sizing: inherit;
+  letter-spacing: 0.2rem;
 }
 
 body {
-  /* font-family: var(--main-font); */
+  font-family: var(--main-font);
   font-size: 1.8rem; /** 18px */
   line-height: 2;
   margin: 0;
+}
+
+h1 {
+  font-size: 2.4rem;
+  line-height: 3.5rem;
+  font-weight: 800;
+  color: var(--black);
+}
+
+h2 {
+  color: var(--light-grey);
+  font-weight: 300;
+  font-size: 1.8rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+p {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--grey);
 }
 
 .authlayout {
@@ -35,4 +62,75 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.form-container {
+  background-color: var(--white);
+  border-radius: 3.1rem;
+  width: 70rem;
+  padding: 12rem;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  margin: 3.5rem 0;
+}
+
+.social-btn {
+  background-color: var(--white);
+  border: 0.1rem solid var(--soft-grey);
+  border-radius: 0.5rem;
+  font-weight: 300;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.form-auth {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.form-auth input {
+  border: 0;
+  border-bottom: 0.1rem solid var(--soft-grey);
+  max-width: 100%;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--grey);
+  padding: 2rem 0;
+}
+
+::placeholder {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--grey);
+}
+
+.form-auth input:focus {
+  outline: none;
+}
+
+.form-auth input[type="submit"] {
+  color: var(--white);
+  background-color: var(--dark-blue);
+  text-transform: capitalize;
+  font-weight: 800;
+  font-size: 1.6rem;
+  border-radius: 0.5rem;
+  margin-top: 3.5rem;
+  padding: 1.5rem 0;
+}
+
+.link {
+  text-decoration: none;
+  color: var(--dark-blue);
 }
