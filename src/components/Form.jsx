@@ -8,11 +8,6 @@ const Form = ({ signUpForm, actionSubmit }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log({
-      fullname,
-      email,
-      password,
-    });
     if (actionSubmit === "register") {
       actionSubmit(email, password, fullname);
     } else {

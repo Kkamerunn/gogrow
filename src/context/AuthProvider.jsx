@@ -8,7 +8,7 @@ import {
   signInWithPopup,
   signOut,
   updateProfile,
-} from "../firebase/firebase.config";
+} from "../firebase/firebase";
 import { useNavigate } from "react-router-dom";
 
 const AuthContext = createContext();
@@ -23,7 +23,7 @@ const AuthProvider = ({ children }) => {
         email,
         password
       );
-      await updateProfile(auth.currentUser, {
+      await updateProfile(userCredentials, {
         displayName: fullname,
       });
       console.log(auth.currentUser);
@@ -55,8 +55,7 @@ const AuthProvider = ({ children }) => {
   const loginWithFacebook = async () => {
     try {
       const facebookProvider = new FacebookAuthProvider();
-      const resp = await signInWithPopup(auth, facebookProvider);
-      console.log(resp);
+      await signInWithPopup(auth, facebookProvider);
       navigate("/home");
     } catch (error) {
       console.log(error);

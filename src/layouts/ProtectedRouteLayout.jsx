@@ -1,11 +1,18 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, Navigate } from "react-router-dom";
+import useAuth from "../hooks/useAuth";
 
 const ProtectedRouteLayout = () => {
+  const { auth } = useAuth();
+
   return (
     <>
-      <main className="protectedRouteLayout">
-        <Outlet />
-      </main>
+      {auth.currentUser ? (
+        <main className="protectedRouteLayout">
+          <Outlet />
+        </main>
+      ) : (
+        <Navigate to="/login" />
+      )}
     </>
   );
 };

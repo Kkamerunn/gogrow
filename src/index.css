@@ -65,6 +65,8 @@ input[type="submit"] {
 .protectedRouteLayout {
   background-color: var(--primary);
   min-height: 100vh;
+  width: 100%;
+  padding: 2rem 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -82,14 +84,17 @@ input[type="submit"] {
 
 .container {
   display: flex;
+  max-width: 100%;
 }
 
 .form-container {
   background-color: var(--white);
   border-radius: 3.1rem;
   width: 70rem;
+  max-width: 100%;
   padding: 12rem;
   position: relative;
+  right: 5rem;
   z-index: 1;
   box-shadow: 0.7rem 0.7rem 1rem 0.4rem rgba(75, 100, 119, 0.69);
 }
@@ -144,7 +149,7 @@ input[type="submit"] {
   font-size: 1.4rem;
   font-weight: 500;
   color: var(--grey);
-  padding: 2rem 0;
+  padding: 2rem 1rem;
 }
 
 ::placeholder {
@@ -178,8 +183,9 @@ input[type="submit"] {
   border-radius: 3.1rem;
   padding: 2rem 0 0 2rem;
   width: 60rem;
+  max-width: 100%;
   position: relative;
-  left: 10rem;
+  left: 5rem;
   z-index: 0;
   box-shadow: 0.4rem 0.4rem 2.6rem 0.4rem rgba(75, 100, 119, 0.69);
 }
@@ -195,4 +201,93 @@ input[type="submit"] {
 .blue-box img {
   width: 13.5rem;
   height: 11.7rem;
+}
+
+/** MEDIA QUERIES **/
+@media (max-width: 767px) {
+  h1 {
+    text-align: center;
+  }
+
+  .container {
+    flex-direction: column-reverse;
+    max-width: 100%;
+  }
+
+  .form-container {
+    border-radius: 0;
+    width: 100%;
+    padding: 2rem;
+    right: 0;
+    box-shadow: none;
+  }
+
+  .form-container p {
+    text-align: center;
+  }
+
+  .blue-box {
+    border-radius: 0;
+    width: 100%;
+    padding: 2rem;
+    left: 0;
+    box-shadow: none;
+  }
+
+  .abstraction {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  h1 {
+    text-align: center;
+  }
+
+  .container {
+    flex-direction: column-reverse;
+    max-width: 100%;
+  }
+
+  .form-container {
+    padding: 6rem;
+    width: 100%;
+    right: 0;
+    top: 2rem;
+  }
+
+  .form-container p {
+    text-align: center;
+  }
+
+  .blue-box {
+    padding: 6rem;
+    width: 100%;
+    left: 0;
+    bottom: 3rem;
+  }
+
+  .abstraction {
+    display: none;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1299px) {
+  .form-container {
+    width: 55rem;
+    padding: 9rem;
+    right: 8rem;
+  }
+
+  .blue-box {
+    padding: 3rem;
+    left: 8rem;
+  }
+
+  .abstraction,
+  .abstraction.img-login {
+    width: 45rem;
+    height: 45rem;
+    right: 85%;
+  }
 }
