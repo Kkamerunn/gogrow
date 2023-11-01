@@ -3,7 +3,9 @@ import Button from "../components/Button";
 
 const Home = () => {
   const { logOut, auth } = useAuth();
-  const username = auth.currentUser.displayName;
+  const username = auth.currentUser.displayName
+    ? auth.currentUser.displayName
+    : auth.currentUser.email.split("@")[0];
 
   return (
     <>

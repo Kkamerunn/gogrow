@@ -13,6 +13,8 @@
   --grey: #bebcbc;
   --soft-grey: #f3f3f3;
   --dark-blue: #1f485b;
+  --light-red: #f54254;
+  --red: #ff0d25;
 }
 
 html {
@@ -201,6 +203,19 @@ input[type="submit"] {
 .blue-box img {
   width: 13.5rem;
   height: 11.7rem;
+}
+
+.alert {
+  width: 25rem;
+  border: 0.1rem solid var(--red);
+  border-radius: 0.7rem;
+  background-color: var(--light-red);
+  padding: 1.5rem;
+  margin: 0 auto;
+}
+
+.alert p {
+  color: var(--white);
 }
 
 /** MEDIA QUERIES **/

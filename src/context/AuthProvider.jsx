@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { createContext, useState } from "react";
 import {
   auth,
   createUserWithEmailAndPassword,
@@ -14,7 +14,16 @@ import { useNavigate } from "react-router-dom";
 const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
+  const [errors, setErrors] = useState("");
   const navigate = useNavigate();
+
+  const handleError = (error) => {
+    const newError = error.message.split(":")[1];
+    setErrors(newError);
+    setTimeout(() => {
+      setErrors("");
+    }, 3000);
+  };
 
   const register = async (email, password, fullname) => {
     try {
@@ -23,13 +32,13 @@ const AuthProvider = ({ children }) => {
         email,
         password
       );
-      await updateProfile(userCredentials, {
+      console.log(userCredentials);
+      await updateProfile(userCredentials.user, {
         displayName: fullname,
       });
-      console.log(auth.currentUser);
       navigate("/home");
     } catch (error) {
-      console.log(error);
+      handleError(error);
     }
   };
 
@@ -38,7 +47,7 @@ const AuthProvider = ({ children }) => {
       await signInWithEmailAndPassword(auth, email, password);
       navigate("/home");
     } catch (error) {
-      console.log(error);
+      handleError(error);
     }
   };
 
@@ -48,7 +57,7 @@ const AuthProvider = ({ children }) => {
       await signInWithPopup(auth, googleProvider);
       navigate("/home");
     } catch (error) {
-      console.log(error);
+      handleError(error);
     }
   };
 
@@ -58,7 +67,7 @@ const AuthProvider = ({ children }) => {
       await signInWithPopup(auth, facebookProvider);
       navigate("/home");
     } catch (error) {
-      console.log(error);
+      handleError(error);
     }
   };
 
@@ -76,6 +85,7 @@ const AuthProvider = ({ children }) => {
         loginWithFacebook,
         logOut,
         auth,
+        errors,
       }}
     >
       {children}

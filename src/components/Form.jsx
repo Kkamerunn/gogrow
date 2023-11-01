@@ -13,6 +13,9 @@ const Form = ({ signUpForm, actionSubmit }) => {
     } else {
       actionSubmit(email, password);
     }
+    setFullname("");
+    setEmail("");
+    setPassword("");
   };
 
   return (
