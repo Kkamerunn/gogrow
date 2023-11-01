@@ -25,7 +25,7 @@ const Form = ({ signUpForm, actionSubmit }) => {
           <input
             type="text"
             id="fullname"
-            placeholder="Full Name"
+            placeholder="Full name"
             value={fullname}
             onChange={(e) => setFullname(e.target.value)}
           />
@@ -53,14 +53,14 @@ const Form = ({ signUpForm, actionSubmit }) => {
       </form>
       {signUpForm ? (
         <p>
-          Already have an account?{" "}
+          Already have an account?
           <Link to="/login" className="link">
             Log In
           </Link>
         </p>
       ) : (
         <p>
-          Don't have an account yet?{" "}
+          Don't have an account yet?
           <Link to="/" className="link">
             Sign Up
           </Link>

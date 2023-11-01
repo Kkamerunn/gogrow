@@ -101,6 +101,21 @@ input[type="submit"] {
   box-shadow: 0.7rem 0.7rem 1rem 0.4rem rgba(75, 100, 119, 0.69);
 }
 
+select {
+  position: absolute;
+  top: 2.5rem;
+  right: 2.5rem;
+  color: var(--black);
+  font-weight: 400;
+  font-size: 1.4rem;
+  border: none;
+}
+
+select:active,
+select:focus {
+  outline: none;
+}
+
 .abstraction {
   display: block;
   width: 58rem;

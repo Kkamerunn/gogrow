@@ -4,6 +4,7 @@ const BlueBox = () => {
   return (
     <div className="blue-box">
       <img src={Sphere} alt="sphere" />
+
       <p>
         Getting <br />
         Started With

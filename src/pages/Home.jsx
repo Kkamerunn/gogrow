@@ -9,7 +9,7 @@ const Home = () => {
 
   return (
     <>
-      <h1>Hi, {username}</h1>
+      <h1>Welcome {username}</h1>
       <Button handleClick={logOut} children={"Log out"} />
     </>
   );
